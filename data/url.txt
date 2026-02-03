@@ -1,0 +1,2 @@
+https://github.com/jainendrakr26/python-numpy/blob/main/ml.txt
+https://github.com/jainendrakr26/python-numpy/blob/main/dl.txt

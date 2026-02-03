@@ -1,0 +1,16 @@
+langchain
+faiss-cpu
+langchain-community
+langchain-openai
+langgraph
+openai
+faiss-cpu
+pydantic
+python-dotenv
+beautifulsoup4
+requests
+streamlit
+wikipedia
+#Embeddings
+sentence-transformers
+langchain-experimental
