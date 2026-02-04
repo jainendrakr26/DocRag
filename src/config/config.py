@@ -19,8 +19,11 @@ class Config:
 
 #Default URLS
     DEFAULT_URLS = [
-        "https://github.com/jainendrakr26/python-numpy/blob/main/ml.txt",
-        "https://github.com/jainendrakr26/python-numpy/blob/main/dl.txt"
+        "https://raw.githubusercontent.com/jainendrakr26/python-numpy/main/dl.txt",
+        "https://raw.githubusercontent.com/jainendrakr26/python-numpy/main/ml.txt",
+        "https://medium.com/data-science/machine-learning-operations-mlops-for-beginners-a5686bfe02b2",
+        #"https://medium.com/@RobuRishabh/introduction-to-machine-learning-555b0f1b62f5",
+        #"https://medium.com/data-science/introducing-deep-learning-and-neural-networks-deep-learning-for-rookies-1-bd68f9cf5883"
 ]
 
     @classmethod

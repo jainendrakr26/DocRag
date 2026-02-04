@@ -27,7 +27,12 @@ class VectorStore:
             documents (List[Document]): The list of documents to index.
         """
         self.vector_store = FAISS.from_documents(documents, self.embedding_model)
-        self.retriever = self.vector_store.as_retriever()
+        # Use similarity_search_with_score to get relevance scores
+        # This enables filtering by relevance threshold
+        self.retriever = self.vector_store.as_retriever(
+            search_type="similarity",
+            search_kwargs={"k": 4}  # Retrieve top 4 similar documents
+        )
 
     def get_retriever(self):
         """

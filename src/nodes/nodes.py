@@ -35,15 +35,28 @@ class RAGNodes:
         Returns: Updated RAGState with generated answer.
         """
 
+        # Check if any documents were retrieved
+        if not state.retrieve_docs:
+            return RAGState(
+                questions=state.questions,
+                retrieve_docs=state.retrieve_docs,
+                answer="I don't have information about this in the documents."
+            )
+
         context="\n".join([doc.page_content for doc in state.retrieve_docs])
 
-        #create prompt
-        prompt=f"""Answer the question based on the context below.
+        # Create prompt that enforces document-only answers
+        prompt=f"""Answer the question ONLY based on the context provided below. 
+If the answer cannot be found in the context, respond with exactly: "I don't have this information in the documents."
+
+Do NOT use any general knowledge or information outside the provided context.
+
 Context:
 {context}
+
 Question: {state.questions}"""
         
-        #Generate response
+        # Generate response
         response=self.llm.invoke(prompt)
 
         return RAGState(
